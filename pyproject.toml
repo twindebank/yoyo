@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "yoyo"
+version = "0.0.1"
+description = "Python microservices made easy."
+authors = [
+    "Theo Windebank <theo@theowindebank.co.uk>"
+]
+license = "MIT"
+
+readme = "README.md"
+
+homepage = ""
+repository = ""
+documentation = ""
+
+keywords = []
+
+classifiers = [
+]
+
+# Requirements
+[tool.poetry.dependencies]
+python = "^3.9"
+
+"ruamel.yaml" = { version = "^0.16" }
+networkx = { version = "^2.5" }
+loguru = { version = "^0.5.3" }
+fire = "^0.3.1"
+dephell = "^0.8.3"
+GitPython = "^3.1.11"
+psutil = "^5.7.3"
+docker-py = "^1.10.6"
+
+[tool.poetry.dev-dependencies]
+pytest = { version = "^6.1" }
+
+[tool.poetry.scripts]
+yy = "yoyo.cli:main"
+yoyo = "yoyo.cli:main"
+
+[build-system]
+requires = ["setuptools", "poetry_core>=1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.dephell.main]
+from = { format = "poetry", path = "pyproject.toml" }
+to = { format = "setuppy", path = "setup.py" }
